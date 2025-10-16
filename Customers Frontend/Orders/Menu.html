@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Quick Bite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Menu.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2 class="logo"><i class="fas fa-utensils"></i>Quick Bite<span>.</span></h2>
+            <nav>
+                <ul>
+                    <li><i class="fas fa-tachometer-alt"></i>Dashboard</li>
+                    <li class="active"><i class="fas fa-bars"></i>Menu</li>
+                    <li><i class="fas fa-hamburger"></i>Food Order</li>
+                    <li><i class="fas fa-star"></i>Reviews</li>
+                    <li><i class="fas fa-cog"></i>Setting</li>
+                </ul>
+            </nav>
+            <div class="upgrade-box">
+                <p>Upgrade your account to get more benefits</p>
+                <button class="upgrade-btn">Upgrade Now</button>
+            </div>
+        </aside>
+        <main class="main">
+            <header class="header">
+                <h1>Our Menu</h1>
+                <div class="user-avatar-container">
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="user-avatar">
+                </div>
+            </header>
+            
+            <div class="menu-categories">
+                <button class="category-btn active">All</button>
+                <button class="category-btn">Burgers</button>
+                <button class="category-btn">Pizza</button>
+                <button class="category-btn">Pasta</button>
+                <button class="category-btn">Salads</button>
+                <button class="category-btn">Sandwiches</button>
+                <button class="category-btn">Sushi</button>
+                <button class="category-btn">Desserts</button>
+                <button class="category-btn">Drinks</button>
+                <button class="category-btn">Breakfast</button>
+            </div>
+            
+            <div class="menu-items" id="menuItems">
+                <!-- Menu items will be dynamically inserted here -->
+            </div>
+        </main>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <script src="Menu.js"></script>
+</body>
+</html>

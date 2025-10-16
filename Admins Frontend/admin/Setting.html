@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Quick-Bite Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Settings.css">
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-utensils"></i>
+                <span class="sidebar-logo">Quick-Bite</span>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <div class="menu-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-store"></i>
+                    <span>Restaurants</span>
+                </div>
+                <div class="menu-item active">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <div class="settings-header">
+                <h1 class="settings-title">Settings</h1>
+                <button class="btn btn-primary" id="saveAll">
+                    <i class="fas fa-save"></i> Save All Changes
+                </button>
+            </div>
+
+            <div class="settings-tabs">
+                <div class="settings-tab active" data-tab="general">General</div>
+                <div class="settings-tab active" data-tab="payment">Payment</div>
+                <div class="settings-tab active" data-tab="notifications">Notifications</div>
+                <div class="settings-tab active" data-tab="security">Security</div>
+            </div>
+
+           
+            <div id="general-settings" class="settings-content active">
+                <div class="settings-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-info-circle"></i> Basic Information
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label"> Name</label>
+                            <input type="text" class="form-control" value=" ">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Default Currency</label>
+                            <select class="form-control">
+                                <option>USD ($)</option>
+                                <option>EUR (€)</option>
+                                <option>NGN (#)</option>
+                                <option selected>INR (₹)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Maintenance Mode</label>
+                        <label class="switch">
+                            <input type="checkbox" id="maintenanceMode">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="form-text">When enabled, the site will be unavailable to customers</span>
+                    </div>
+                </div>
+                
+                <div class="settings-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-truck"></i> Delivery Settings
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Delivery Fee (₹)</label>
+                            <input type="number" class="form-control" value="30">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Minimum Order (₹)</label>
+                            <input type="number" class="form-control" value="100">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Delivery Radius (km)</label>
+                        <input type="number" class="form-control" value="10">
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="payment-settings" class="settings-content">
+                <div class="settings-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-credit-card"></i> Payment Methods
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Enabled Payment Options</label>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; gap: 0.75rem;">
+                                <input type="checkbox" checked>
+                                Credit/Debit Cards
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.75rem;">
+                                <input type="checkbox" checked>
+                                UPI Payments
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.75rem;">
+                                <input type="checkbox">
+                                Cash on Delivery
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-percentage"></i> Commission & Fees
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Admin Commission (%)</label>
+                            <input type="number" class="form-control" value="15">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tax Rate (%)</label>
+                            <input type="number" class="form-control" value="5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="notifications-settings" class="settings-content">
+                <div class="settings-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-bell"></i> Notification Preferences
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Admin Email</label>
+                        <input type="email" class="form-control" value="admin@quickbite.com">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Email Notifications</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">SMS Notifications</label>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="security-settings" class="settings-content">
+                <div class="settings-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-shield-alt"></i> Security
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Two-Factor Authentication</label>
+                        <label class="switch">
+                            <input type="checkbox" id="twoFactorAuth">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="form-text">Require 2FA for admin login</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Password Policy</label>
+                        <select class="form-control">
+                            <option>Basic (6 characters minimum)</option>
+                            <option selected>Standard (8+ characters with numbers)</option>
+                            <option>Strong (12+ characters with special characters)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="settings-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-key"></i> Change Password
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Current Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">New Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Confirm New Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    
+                    <button class="btn btn-primary">
+                        <i class="fas fa-save"></i> Update Password
+                    </button>
+                </div>
+            </div>
+
+            <div class="notification" id="notification">
+                <i class="fas fa-check-circle"></i>
+                <span>Settings saved successfully!</span>
+            </div>
+        </main>
+    </div>
+
+    <script src="Setting.js"></script>
+</body>
+</html>

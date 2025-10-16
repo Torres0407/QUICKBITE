@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBite Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="users.css">
+</head>
+<body>
+  <aside>
+    <div>
+      <div class="logo">
+        <i class="fas fa-utensils"></i>
+        <span>QuickBite</span>
+      </div>
+      <nav>
+        <a href="#" class="active">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Restaurant-listing\restuarant-listing.html">
+          <i class="fas fa-book"></i>
+          <span>Menu</span>
+        </a>
+        <a href="#orders">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Orders</span>
+          <div class="notification-badge">5</div>
+        </a>
+        <a href="#">
+          <i class="fas fa-users"></i>
+          <span>Customers</span>
+        </a>
+        <a href="Custoer review QB/customer reviews.html">
+          <i class="fas fa-star"></i>
+          <span>Reviews</span>
+        </a>
+        <a href="#">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+    </div>
+    <div class="upgrade">
+      <i class="fas fa-crown"></i> Upgrade to Pro
+    </div>
+  </aside>
+
+  <main class="dashboard">
+    <div class="top-bar">
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input class="search" type="text" placeholder="Search orders, customers...">
+      </div>
+      <div class="user-profile">
+        <div class="user-avatar" id="user-avatar">C9</div>
+        <div class="user-name" id="user-name">Cloud_9</div>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="title">Total Revenue</div>
+        <div class="value">₦289,450.00</div>
+        <div class="trend up">
+          <i class="fas fa-arrow-up"></i> 12.5% from last month
+        </div>
+      </div>
+      <div class="card">
+        <div class="title">Today's Income</div>
+        <div class="value">₦24,700.00</div>
+        <div class="trend up">
+          <i class="fas fa-arrow-up"></i> 8.3% from yesterday
+        </div>
+      </div>
+      <div class="card">
+        <div class="title">Active Orders</div>
+        <div class="value">18</div>
+        <div class="trend down">
+          <i class="fas fa-arrow-down"></i> 2 from yesterday
+        </div>
+      </div>
+      <div class="card">
+        <button class="withdraw-btn">
+          <i class="fas fa-wallet"></i> Withdraw Funds
+        </button>
+      </div>
+    </div>
+
+    <div class="charts">
+      <div class="chart">
+        <div class="title">Weekly Performance</div>
+        <div class="chart-container">
+          <div class="performance-chart">
+            <div class="chart-bar" style="height: 30%;" data-value="₦12k"></div>
+            <div class="chart-bar" style="height: 50%;" data-value="₦20k"></div>
+            <div class="chart-bar" style="height: 70%;" data-value="₦28k"></div>
+            <div class="chart-bar" style="height: 90%;" data-value="₦36k"></div>
+            <div class="chart-bar" style="height: 60%;" data-value="₦24k"></div>
+            <div class="chart-bar" style="height: 80%;" data-value="₦32k"></div>
+            <div class="chart-bar" style="height: 95%;" data-value="₦38k"></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="title">Order Completion Rate</div>
+        <div class="chart-container" style="display: flex; align-items: center; justify-content: center;">
+          <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-color);">84%</div>
+            <div style="font-size: 0.9rem; color: var(--medium-gray);">Successful orders</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="title">Popular Items</div>
+        <div class="chart-container" style="display: flex; flex-direction: column; justify-content: center;">
+          <div class="pie-chart"></div>
+          <div style="display: flex; justify-content: center; gap: 15px; margin-top: 10px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; font-size: 0.8rem;">
+              <div style="width: 10px; height: 10px; background: #ff6b6b; border-radius: 2px; margin-right: 5px;"></div>
+              Jollof Rice (30%)
+            </div>
+            <div style="display: flex; align-items: center; font-size: 0.8rem;">
+              <div style="width: 10px; height: 10px; background: #ff9f43; border-radius: 2px; margin-right: 5px;"></div>
+              Fried Rice (25%)
+            </div>
+            <div style="display: flex; align-items: center; font-size: 0.8rem;">
+              <div style="width: 10px; height: 10px; background: #4ecdc4; border-radius: 2px; margin-right: 5px;"></div>
+              Pasta (20%)
+            </div>
+            <div style="display: flex; align-items: center; font-size: 0.8rem;">
+              <div style="width: 10px; height: 10px; background: #336497; border-radius: 2px; margin-right: 5px;"></div>
+              Chicken (15%)
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="title">Daily Activity</div>
+        <div class="chart-container">
+          <div class="bar-chart">
+            <div class="bar" style="height: 30%;" data-day="Mon"></div>
+            <div class="bar" style="height: 50%;" data-day="Tue"></div>
+            <div class="bar" style="height: 70%;" data-day="Wed"></div>
+            <div class="bar" style="height: 90%;" data-day="Thu"></div>
+            <div class="bar" style="height: 60%;" data-day="Fri"></div>
+            <div class="bar" style="height: 100%;" data-day="Sat"></div>
+            <div class="bar" style="height: 80%;" data-day="Sun"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recent-orders">
+      <div class="title" id="orders">Recent Orders</div>
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Items</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#QB-2876</td>
+            <td>okubor chinonye</td>
+            <td>2 Jollof Rice, 1 Coke</td>
+            <td>₦3,500.00</td>
+            <td><span class="order-status status-completed">Completed</span></td>
+            <td class="order-action">View</td>
+          </tr>
+          <tr>
+            <td>#QB-2875</td>
+            <td>okubor chinonye</td>
+            <td>Fried Rice + Chicken</td>
+            <td>₦4,200.00</td>
+            <td><span class="order-status status-pending">Preparing</span></td>
+            <td class="order-action">View</td>
+          </tr>
+          <tr>
+            <td>#QB-2874</td>
+            <td>okubor chinonye</td>
+            <td>Pasta Bolognese</td>
+            <td>₦2,800.00</td>
+            <td><span class="order-status status-pending">On the way</span></td>
+            <td class="order-action">View</td>
+          </tr>
+          <tr>
+            <td>#QB-2873</td>
+            <td>okubor chinonye</td>
+            <td>3 Jollof Rice, 2 Spaghetti</td>
+            <td>₦6,900.00</td>
+            <td><span class="order-status status-completed">Completed</span></td>
+            <td class="order-action">View</td>
+          </tr>
+          <tr>
+            <td>#QB-2872</td>
+            <td>okubor chinonye</td>
+            <td>Amala + Ewedu</td>
+            <td>₦3,200.00</td>
+            <td><span class="order-status status-cancelled">Cancelled</span></td>
+            <td class="order-action">View</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="users.js"></script>
+
+</body>
+</html>

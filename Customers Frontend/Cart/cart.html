@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBite - Cart</title>
+  <link rel="stylesheet" href="cart.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Quick<span class="highlight">Bite</span></div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Restaurants</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Track</a></li>
+      </ul>
+    </nav>
+    <button class="login-btn">Login / Signup</button>
+  </header>
+
+  <!-- Cart Section -->
+  <main class="cart-container">
+    <!-- Cart Items -->
+    <section class="cart-items">
+      <h2>Your Cart</h2>
+      <div class="cart-item">
+        <div class="item-info">
+          <h4>Burger Deluxe</h4>
+          <p>Quantity: 2</p>
+        </div>
+        <div class="item-price">$12.00</div>
+      </div>
+
+      <div class="cart-item">
+        <div class="item-info">
+          <h4>Fries</h4>
+          <p>Quantity: 1</p>
+        </div>
+        <div class="item-price">$3.50</div>
+      </div>
+
+      <div class="cart-note">
+        <label for="note">Add a note to your order:</label>
+        <textarea id="note" placeholder="E.g. No onions, please..."></textarea>
+      </div>
+    </section>
+
+    <!-- Order Summary -->
+    <aside class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-line">
+        <span>Subtotal</span>
+        <span>$15.50</span>
+      </div>
+      <div class="summary-line">
+        <span>Delivery Fee</span>
+        <span>$2.00</span>
+      </div>
+      <hr />
+      <div class="summary-total">
+        <span>Total</span>
+        <span>$17.50</span>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </aside>
+  </main>
+
+  
+</body>
+</html>

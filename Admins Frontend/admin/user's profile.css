@@ -1,0 +1,225 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+html{
+  font-size: 100%;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  /* background: #f9f9f9; */
+  background-image:url(myimage.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  /* background: var(--light); */
+  background-image: url(image.jpeg);
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem 1rem;
+  width: 16rem;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.logo span {
+  color: yellow;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.sidebar nav ul li.active {
+  background: orange;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.upgrade-box {
+  background: orangered;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1,2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.upgrade-box button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.main{
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+.user-avatar{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.profile {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.05);
+  width: 30vw;
+  height: 70vh;
+}
+.profile-card{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.profile-image {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50% 30% 40% 50%;
+}
+.profile-info h3 {
+  font-size: 1.25rem;
+  color: #666;
+}
+.profile-info p {
+  font-size: 0.875rem;
+  color: #666;
+}
+.edit-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  border: none;
+  background: #eee;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.stat-box {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #f9fafb;
+}
+.stat-box.green h4 {
+  color: #22c55e;
+}
+.stat-box.yellow h4 {
+  color: #facc15;
+}
+.stat-box.red h4 {
+  color: #ef4444;
+}
+.earnings {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.earning-box p {
+  color: #666;
+  font-size: 0.875rem;
+}
+.earning-box h3 {
+  font-size: 1.5rem;
+  color: #111;
+}
+.trip-info {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+.points-box {
+  margin-top: 1.5rem;
+  text-align: center;
+  background: #e0f2fe;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.points-box h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+.reward-btn {
+  background: #0ea5e9;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.performance {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.05);
+}
+.perf-metrics {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.metric p {
+  color: #888;
+  font-size: 0.875rem;
+}
+.metric h4 {
+  font-size: 1.25rem;
+  color: #333;
+}
+.perf-graph {
+  margin-top: 2rem;
+}
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chart-img {
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+}

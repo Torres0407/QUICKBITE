@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Bite - Food Ordering Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="logo">
+                <img src="Logo 001.png" alt="Quick Bite Logo">
+                <h1>Quick Bite</h1>
+            </div>
+            
+            <div class="form-control">
+                <ul class="form-tabs">
+                    <li class="active" data-tab="login">Login</li>
+                    <li data-tab="register">Register</li>
+                </ul>
+                
+                <!-- Login Form -->
+                <form id="login-form" class="form active">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="login-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" id="remember-me"> Remember me
+                        </label>
+                        <a href="#" id="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="social-login">
+                        <p>Or login with</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+                            <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon apple"><i class="fab fa-apple"></i></a>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Registration Form -->
+                <form id="register-form" class="form">
+                    <div class="role-selection">
+                        <div class="role-option active" data-role="buyer">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>I'm a Buyer</span>
+                        </div>
+                        <div class="role-option" data-role="seller">
+                            <i class="fas fa-store"></i>
+                            <span>I'm a Seller</span>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="register-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="register-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="register-phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="register-password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    
+                    <!-- Seller-specific fields (hidden by default) -->
+                    <div id="seller-fields" class="hidden">
+                        <div class="input-group">
+                            <i class="fas fa-store"></i>
+                            <input type="text" id="restaurant-name" placeholder="Restaurant/Business Name">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="business-address" placeholder="Business Address">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="tax-id" placeholder="Tax ID (Optional)">
+                        </div>
+                    </div>
+                    
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" id="agree-terms" required>
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn">Create Account</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="carousel">
+            <div class="slide active">
+                <img src="Quick bite 002.avif" alt="Food Delivery" >
+                <h2>Order from your favorite restaurants</h2>
+                <p>Discover delicious meals from local eateries near you</p>
+            </div>
+            <div class="slide">
+                <img src="Quick bite 004.jpg" alt="Restaurant Owner">
+                <h2>Grow your food business</h2>
+                <p>Reach more customers with our platform</p>
+            </div>
+            <div class="slide">
+                <img src="Quick bite 003.jpg" alt="Fast Delivery">
+                <h2>Lightning fast delivery</h2>
+                <p>Get your food delivered in minutes</p>
+            </div>
+            <div class="carousel-nav">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgot-password-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Reset Password</h2>
+            <p>Enter your email address to receive a password reset link</p>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="reset-email" placeholder="Your email address">
+            </div>
+            <button id="send-reset-link" class="btn">Send Reset Link</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

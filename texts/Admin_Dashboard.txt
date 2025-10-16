@@ -1,0 +1,1 @@
+Mockup: Dashboard with stats and order management controls.

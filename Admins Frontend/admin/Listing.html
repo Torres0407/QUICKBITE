@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Listings | QuickBite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Listing.css">
+</head>
+<body>
+   
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i>
+                Quick <span>Bite</span>
+            </a>
+            <div class="user-profile">
+                <div class="user-avatar">C9</div>
+                <span>Cloud_9</span>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="main-container">
+        <section class="search-section">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search for restaurants, cuisines, or dishes...">
+            </div>
+
+            <button class="mobile-filters-btn" id="mobileFiltersBtn">
+                <i class="fas fa-sliders-h"></i>
+                Filters
+            </button>
+
+            <div class="filter-tags" id="filterTags">
+                <button class="filter-tag active">All</button>
+                <button class="filter-tag">Italian</button>
+                <button class="filter-tag">Japanese</button>
+                <button class="filter-tag">Mexican</button>
+                <button class="filter-tag">Indian</button>
+                <button class="filter-tag">American</button>
+                <button class="filter-tag">Thai</button>
+                <button class="filter-tag">Mediterranean</button>
+            </div>
+        </section>
+
+        
+        <div class="restaurant-grid" id="restaurantGrid">
+        </div>
+
+        
+        <div class="pagination">
+            <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+   
+    <div class="filter-modal" id="filterModal">
+        <div class="filter-modal-content">
+            <div class="filter-modal-header">
+                <h2 class="filter-modal-title">Filters</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-group-title">Cuisine</span>
+                <div class="filter-options">
+                    <button class="filter-option selected">All</button>
+                    <button class="filter-option">Italian</button>
+                    <button class="filter-option">Japanese</button>
+                    <button class="filter-option">Mexican</button>
+                    <button class="filter-option">Indian</button>
+                    <button class="filter-option">American</button>
+                    <button class="filter-option">Thai</button>
+                    <button class="filter-option">Mediterranean</button>
+                    <button class="filter-option">Chinese</button>
+                    <button class="filter-option">French</button>
+                    <button class="filter-option">Korean</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-group-title">Rating</span>
+                <div class="filter-options">
+                    <button class="filter-option selected">Any</button>
+                    <button class="filter-option">4.5+</button>
+                    <button class="filter-option">4.0+</button>
+                    <button class="filter-option">3.5+</button>
+                    <button class="filter-option">3.0+</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-group-title">Delivery Time</span>
+                <div class="filter-options">
+                    <button class="filter-option selected">Any</button>
+                    <button class="filter-option">Under 15 min</button>
+                    <button class="filter-option">Under 30 min</button>
+                    <button class="filter-option">Under 45 min</button>
+                    <button class="filter-option">Under 60 min</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-group-title">Price Range</span>
+                <div class="filter-options">
+                    <button class="filter-option selected">Any</button>
+                    <button class="filter-option">$</button>
+                    <button class="filter-option">$$</button>
+                    <button class="filter-option">$$$</button>
+                    <button class="filter-option">$$$$</button>
+                </div>
+            </div>
+
+            <button class="apply-filters" id="applyFilters">Apply Filters</button>
+        </div>
+    </div>
+
+    <script src="Listing.js"></script>
+</body>
+</html>

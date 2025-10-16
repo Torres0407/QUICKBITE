@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuickBite Promotions</title>
+  <link rel="stylesheet" href="restaurant-listing.css">
+</head>
+<body>
+   <header class="navbar">
+    <div class="logo">Quick<span class="highlight">Bite</span></div>
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Homepage\homepage.html">Home</a></li>
+        <li><a href="C:/Users/USER/Documents/QuickBite/Customers Frontend/Restaurant-listing/restuarant-listing.html">Browse Menu</a></li>
+        <li><a href="C:/Users/USER/Documents/QuickBite/Customers Frontend/Restaurant-listing/restuarant-listing.html">Special Offers</a></li>
+        <li><a href="C:/Users/USER/Documents/QuickBite/Customers Frontend/Restaurant-listing/restuarant-listing.html">Restaurants</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </nav>
+    <div class="login-cart">
+      <button class="login-btn">Login/Signup</button>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+
+
+  <div class="layout-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Sort by</h3>
+      <ul>
+        <li class="underline-after"><img src="icons8-near-me-50.png" alt="near">Near me</li><br>
+        <li class="underline-after"><img src="icons8-thumbs-up-50.png" alt="">Ratings</li><br>
+        <li class="underline-after"><img src="icons8-delivery-50.png" alt="">Delivery fee</li>
+      </ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+      <h3>Popular filters</h3>
+      <ul>
+        <li class="underline-after"><img src="icons8-poultry-leg-50.png" alt="Chicken">Chicken</li><br>
+        <li class="underline-after"><img src="icons8-rice-50.png" alt="Chicken">Jollof</li><br>
+        <li class="underline-after"><img src="icons8-ingredients-50.png" alt="Chicken">Local food</li>
+      </ul>
+<br>
+      <h3>More filters</h3>
+      <ul>
+        <li class="underline-after"><img src="icons8-african-32.png" alt="african">African</li><br>
+        <li class="underline-after"><img src="icons8-noodles-50.png" alt="chinese">Chinese</li><br>
+        <li class="underline-after"><img src="icons8-chili-pepper-26.png" alt="indian">Indian</li>
+         <li class="underline-after"><img src="icons8-bakery-80.png" alt="Bakery">Bakery</li>
+          <li class="underline-after"><img src="icons8-steak-30.png" alt="Grill">Grill</li>
+           <li class="underline-after"><img src="icons8-ice-cream-50.png" alt="Ice">Ice Cream</li>
+            <li class="underline-after"><img src="icons8-international-50.png" alt="International">International</li>
+             <li class="underline-after"><img src="icons8-seafood-64.png" alt="Chicken">Seafood</li>
+              <li class="underline-after"><img src="icons8-snacks-64.png" alt="Chicken">Snacks</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+       <div class="search-bar">
+    <input type="text" placeholder=" Search for restaurants, dishes, or cuisines..." />
+    <button>Search</button>
+  </div>
+
+
+      <section class="promotions-section">
+        <h2>
+          Promotions
+          <a href="#" class="see-all">See all</a>
+        </h2>
+        <div class="promotions-grid" id="restaurantList">
+          <div class="restaurant-card">
+            <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+              <img src="fried rice.jpeg" alt="The Place">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">The Place</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 40–50 min</p>
+            </a>
+            </div>
+          </div>
+          <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="Homemade pizza recipe.jpeg" alt="Dodo Pizza">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Dodo Pizza</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 65–75 min</p>
+              </a>
+            </div>
+          </div>
+          <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="donuts.jpeg" alt="Krispy Kreme">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Krispy Kreme</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 35–45 min</p>
+               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+<br><br><br><br><br><br>
+
+      <section class="promotions-section">
+        <h2>
+          All Stores
+        </h2>
+        <div class="promotions-grid" id="restaurantList">
+           <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="fried rice.jpeg" alt="The Place">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">The Place</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 40–50 min</p>
+            </a>
+            </div>
+          </div>
+          <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="Homemade pizza recipe.jpeg" alt="Dodo Pizza">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Dodo Pizza</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 65–75 min</p>
+            </a>
+            </div>
+          </div>
+          <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="Double hamburger.jpg" alt="The Place">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Chef Burgers Nigeria</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 40–50 min</p>
+            </a>
+            </div>
+          </div>
+          <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="pizza.jpeg" alt="Dodo Pizza">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Pizzaria Nigeria</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 65–75 min</p>
+              </a>
+            </div>
+          </div>
+          <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="donuts.jpeg" alt="Krispy Kreme">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Krispy Kreme</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 35–45 min</p>
+            </a>
+            </div>
+          </div>
+        
+          <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="Chili oil noodles are a simple yet incredibly….jpg" alt="The Place">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Chow Express</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 40–50 min</p>
+            </a>
+            </div>
+          </div>
+          <div class="restaurant-card">
+             <a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Orders\Menu.html">
+            <img src="Crispy and Juicy Southern Fried Chicken with….jpg" alt="Dodo Pizza">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Fried Chicken Plaza</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 65–75 min</p>
+            </a>
+            </div>
+          </div>
+          <!-- <div class="restaurant-card">
+            <img src="donuts.jpeg" alt="Krispy Kreme">
+            <div class="restaurant-info">
+              <h4 class="restaurant-name">Krispy Kreme</h4>
+              <p><img src="icons8-delivery-50.png" alt="bike">Free · 35–45 min</p>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="main-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h2>Quick<span>Bite</span></h2>
+      <div class="store-badges">
+        <img src="...apple-store.png" alt="Apple Store">
+        <img src="google-play.png" alt="Google Play">
+      </div>
+      <p>Company QuickBite Food Ordering Services, Registered with the National Institute of Information Technology.</p>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Get Exclusive Deals in your Inbox</h4>
+      <form>
+        <input type="email" placeholder="youremail@gmail.com">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p>We won't spam, read our <a href="#">email policy</a></p>
+      <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-tiktok"></i>
+        <i class="fab fa-snapchat-ghost"></i>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Legal Pages</h4>
+        <a href="#">Terms and conditions</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+        <a href="#">Modern Slavery Statement</a>
+      </div>
+      <div>
+        <h4>Important Links</h4>
+        <a href="#">Get help</a>
+        <a href="#">Add your restaurant</a>
+        <a href="#">Sign up to deliver</a>
+        <a href="#">Create a business account</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Order.uk Copyright © 2024. All Rights Reserved.</p>
+    <div class="bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Pricing</a>
+      <a href="#">Do not sell or share my personal information</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="restaurant-listing.js"></script>
+</body>
+</html>

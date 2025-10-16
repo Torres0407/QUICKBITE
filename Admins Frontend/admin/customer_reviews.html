@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickBite - Customer Reviews</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="customer reviews.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <i class="fas fa-utensils"></i>
+        Quick<span>Bite</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <div class="nav-item">
+          <i class="fas fa-tachometer-alt"></i>
+          <span onclick="location.href='admin.html'">Dashboard</span>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-book"></i>
+          <span onclick="location.href='Listing.html'">Restaurants</span>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-shopping-bag"></i>
+          <span onclick="location.href='admin.html'">Dashboard</span>
+        </div>
+        <div class="nav-item active">
+          <i class="fas fa-star"></i>
+           <span onclick="location.href='customer_reviews.html'">Users</span>
+        </div>
+        <div class="nav-item">
+          <i class="fas fa-cog"></i>
+          <span onclick="location.href='Setting.html'">Settings</span>
+        </div>
+      </nav>
+      
+      <div class="upgrade-box">
+        <h3>Premium Features</h3>
+        <p>Upgrade your account to access advanced analytics and more.</p>
+        <button class="upgrade-btn">Upgrade Now</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>Customer Reviews</h1>
+        <div class="user-profile">
+         <div class="user-avatar">C9</div>
+          <span class="user-name">Cloud_9</span>
+        </div>
+      </header>
+
+      <section class="review-summary">
+        <div class="summary-card fade-in" style="animation-delay: 0.1s">
+          <div class="card-header">
+            <h3 class="card-title">Total Reviews</h3>
+            <span class="card-date">Today</span>
+          </div>
+          <h2 class="card-value">1,248</h2>
+          <p class="card-label">Customer Feedback</p>
+          <div class="card-change up">
+            <i class="fas fa-arrow-up"></i>
+            <span>12% from last month</span>
+          </div>
+        </div>
+
+        <div class="summary-card fade-in" style="animation-delay: 0.2s">
+          <div class="card-header">
+            <h3 class="card-title">Average Rating</h3>
+            <span class="card-date">This week</span>
+          </div>
+          <h2 class="card-value">4.7</h2>
+          <p class="card-label">Out of 5 stars</p>
+          <div class="card-change up">
+            <i class="fas fa-arrow-up"></i>
+            <span>0.3 from last week</span>
+          </div>
+        </div>
+
+        <div class="summary-card fade-in" style="animation-delay: 0.3s">
+          <div class="card-header">
+            <h3 class="card-title">Positive Reviews</h3>
+            <span class="card-date">This month</span>
+          </div>
+          <h2 class="card-value">89%</h2>
+          <p class="card-label">Satisfied customers</p>
+          <div class="card-change up">
+            <i class="fas fa-arrow-up"></i>
+            <span>5% from last month</span>
+          </div>
+        </div>
+
+        <div class="summary-card fade-in" style="animation-delay: 0.4s">
+          <div class="card-header">
+            <h3 class="card-title">Response Rate</h3>
+            <span class="card-date">Last 30 days</span>
+          </div>
+          <h2 class="card-value">78%</h2>
+          <p class="card-label">Reviews responded to</p>
+          <div class="card-change down">
+            <i class="fas fa-arrow-down"></i>
+            <span>2% from last period</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="review-controls">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-input" placeholder="Search reviews..." autocomplete="off">
+        </div>
+        <div class="filter-container">
+          <button class="filter-btn" id="filter-btn">
+            <i class="fas fa-filter"></i>
+            <span>Filters</span>
+          </button>
+          <div class="filter-dropdown" id="filter-dropdown">
+            <div class="filter-group">
+              <h4>Rating</h4>
+              <div class="filter-options">
+                <div class="filter-option">
+                  <input type="checkbox" id="rating-5" name="rating" value="5" checked>
+                  <label for="rating-5">★★★★★ (5 stars)</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="rating-4" name="rating" value="4" checked>
+                  <label for="rating-4">★★★★☆ (4 stars)</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="rating-3" name="rating" value="3" checked>
+                  <label for="rating-3">★★★☆☆ (3 stars)</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="rating-2" name="rating" value="2">
+                  <label for="rating-2">★★☆☆☆ (2 stars)</label>
+                </div>
+                <div class="filter-option">
+                  <input type="checkbox" id="rating-1" name="rating" value="1">
+                  <label for="rating-1">★☆☆☆☆ (1 star)</label>
+                </div>
+              </div>
+            </div>
+            <div class="filter-group">
+              <h4>Date Range</h4>
+              <div class="filter-options">
+                <div class="filter-option">
+                  <input type="radio" id="date-all" name="date-range" value="all" checked>
+                  <label for="date-all">All Time</label>
+                </div>
+                <div class="filter-option">
+                  <input type="radio" id="date-week" name="date-range" value="week">
+                  <label for="date-week">Last 7 Days</label>
+                </div>
+                <div class="filter-option">
+                  <input type="radio" id="date-month" name="date-range" value="month">
+                  <label for="date-month">Last 30 Days</label>
+                </div>
+              </div>
+            </div>
+            <div class="filter-actions">
+              <button class="filter-reset" id="reset-filters">Reset</button>
+              <button class="filter-apply" id="apply-filters">Apply</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-grid" id="reviews-container">
+        <!-- Reviews will be generated by JavaScript -->
+      </section>
+
+      <div class="pagination">
+        <button class="page-btn" id="prev-page" disabled>
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="page-btn active" data-page="1">1</button>
+        <button class="page-btn" data-page="2">2</button>
+        <button class="page-btn" data-page="3">3</button>
+        <button class="page-btn" id="next-page">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="customer_reviews.js"></script>
+</body>
+</html>

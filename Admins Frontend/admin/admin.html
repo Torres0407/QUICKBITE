@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Quick-Bite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="admin.css">
+<body>
+    <div id="app">
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <span class="logo-text">Quick</span>Bite
+            </div>
+            
+           <nav class="nav-menu">
+    <div class="nav-item" data-section="dashboard">
+        <i class="fas fa-tachometer-alt"></i>
+        <span onclick="location.href='admin.html'">Dashboard</span>
+    </div>
+
+    <div class="nav-item" data-section="users">
+        <i class="fas fa-users"></i>
+        <span onclick="location.href='customer_reviews.html'">Users</span>
+        <span class="admin-badge">12 New</span>
+    </div>
+
+    <div class="nav-item" data-section="restaurants">
+        <i class="fas fa-store"></i>
+        <span onclick="location.href='Listing.html'">Restaurants</span>
+    </div>
+
+    <div class="nav-item" data-section="promotions">
+        <i class="fas fa-tag"></i>
+        <span onclick="location.href='promotions.html'">Promotions</span>
+    </div>
+
+    <div class="nav-item" data-section="tickets">
+        <i class="fas fa-headset"></i>
+        <span onclick="location.href='support.html'">Support</span>
+        <span class="admin-badge">5</span>
+    </div>
+
+    <div class="nav-item" data-section="settings">
+        <i class="fas fa-cog"></i>
+        <span onclick="location.href='Setting.html'">Settings</span>
+    </div>
+</nav>
+
+<div class="sidebar-footer">
+    <div class="nav-item" onclick="location.href='logout.html'">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+    </div>
+</div>
+
+            
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header class="header">
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="header-title">Dashboard Overview</h1>
+                <div class="user-menu">
+                    <div class="notification-badge">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge-count">3</span>
+                    </div>
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="user-avatar" id="user-avatar">
+                </div>
+            </header>
+            
+            <div class="content">
+                <div class="stats-grid">
+                    <div class="stat-card fade-in">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-title">Total Orders</div>
+                                <div class="stat-value">1,248</div>
+                                <div class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i> 12% from last week
+                                </div>
+                            </div>
+                            <div class="stat-icon blue">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card fade-in">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-title">Registered Users</div>
+                                <div class="stat-value">5,672</div>
+                                <div class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i> 8% from last month
+                                </div>
+                            </div>
+                            <div class="stat-icon green">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card fade-in">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-title">Restaurants</div>
+                                <div class="stat-value">243</div>
+                                <div class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i> 5 new this week
+                                </div>
+                            </div>
+                            <div class="stat-icon orange">
+                                <i class="fas fa-store"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card fade-in">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-title">Total Revenue</div>
+                                <div class="stat-value">$24,587</div>
+                                <div class="stat-change negative">
+                                    <i class="fas fa-arrow-down"></i> 3% from last week
+                                </div>
+                            </div>
+                            <div class="stat-icon purple">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="charts-grid">
+                    <div class="chart-card fade-in">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Weekly Orders</h3>
+                            <div class="chart-actions">
+                                <select class="btn btn-outline btn-sm" id="ordersTimeRange">
+                                    <option value="7">Last 7 Days</option>
+                                    <option value="30">Last 30 Days</option>
+                                    <option value="90">Last 90 Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="ordersChart"></div>
+                    </div>
+                    
+                    <div class="chart-card fade-in">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Revenue by Category</h3>
+                            <div class="chart-actions">
+                                <select class="btn btn-outline btn-sm" id="revenueTimeRange">
+                                    <option value="month">This Month</option>
+                                    <option value="last_month">Last Month</option>
+                                    <option value="year">This Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="revenueChart"></div>
+                    </div>
+                </div>
+                
+                <div class="table-card fade-in">
+                    <div class="table-header">
+                        <h3 class="table-title">Recent Orders</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-outline btn-sm" id="filterOrders">
+                                <i class="fas fa-filter"></i> Filter
+                            </button>
+                            <button class="btn btn-outline btn-sm" id="exportOrders">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                            <button class="btn btn-primary btn-sm" id="createOrder">
+                                <i class="fas fa-plus"></i> New
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Restaurant</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="table-card fade-in">
+                    <div class="table-header">
+                        <h3 class="table-title">Pending Approvals</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-primary btn-sm" id="createCoupon">
+                                <i class="fas fa-plus"></i> Create Coupon
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tabs">
+                        <div class="tab active" data-tab="restaurants">Restaurants (5)</div>
+                        <div class="tab" data-tab="drivers">Drivers (2)</div>
+                        <div class="tab" data-tab="users">Users (3)</div>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Submitted</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="approvalsTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div class="modal" id="couponModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Coupon</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="couponForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Coupon Code</label>
+                            <input type="text" class="form-control" placeholder="e.g. SUMMER20" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Discount Type</label>
+                            <select class="form-control" required>
+                                <option value="">Select Type</option>
+                                <option>Percentage</option>
+                                <option>Fixed Amount</option>
+                                <option>Free Delivery</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Discount Value</label>
+                            <input type="number" class="form-control" placeholder="e.g. 20" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Minimum Order</label>
+                            <input type="number" class="form-control" placeholder="e.g. 25">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Start Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">End Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Applicable Restaurants</label>
+                        <select class="form-control" multiple>
+                            <option>All Restaurants</option>
+                            <option>Burger Palace</option>
+                            <option>Pizza Heaven</option>
+                            <option>Sushi World</option>
+                            <option>Taco Fiesta</option>
+                            <option>Pasta Paradise</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Usage Limit</label>
+                        <input type="number" class="form-control" placeholder="Leave empty for unlimited">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" id="cancelCoupon">Cancel</button>
+                <button type="submit" class="btn btn-primary" form="couponForm">Create Coupon</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Order Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                        <strong>Order #QB-1001</strong>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+                    <div class="text-muted">Jun 15, 2023 2:30 PM</div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4 class="mb-2">Customer Information</h4>
+                    <div class="p-3 bg-gray-50 rounded">
+                        <div class="flex justify-between mb-1">
+                            <span>Name:</span>
+                            <strong>John Smith</strong>
+                        </div>
+                        <div class="flex justify-between mb-1">
+                            <span>Phone:</span>
+                            <strong>(555) 123-4567</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Email:</span>
+                            <strong>john.smith@example.com</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4 class="mb-2">Delivery Information</h4>
+                    <div class="p-3 bg-gray-50 rounded">
+                        <div class="flex justify-between mb-1">
+                            <span>Address:</span>
+                            <strong>123 Main St, Apt 4B</strong>
+                        </div>
+                        <div class="flex justify-between mb-1">
+                            <span>City:</span>
+                            <strong>New York, NY 10001</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Delivery Time:</span>
+                            <strong>30-45 minutes</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h4 class="mb-2">Order Items</h4>
+                    <div class="p-3 bg-gray-50 rounded">
+                        <div class="flex justify-between mb-2 pb-2 border-b">
+                            <span>2x Cheeseburger</span>
+                            <strong>$9.98</strong>
+                        </div>
+                        <div class="flex justify-between mb-2 pb-2 border-b">
+                            <span>1x French Fries</span>
+                            <strong>$3.50</strong>
+                        </div>
+                        <div class="flex justify-between mb-2 pb-2 border-b">
+                            <span>1x Soda</span>
+                            <strong>$1.99</strong>
+                        </div>
+                        <div class="flex justify-between mt-3">
+                            <span>Subtotal:</span>
+                            <strong>$15.47</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Delivery Fee:</span>
+                            <strong>$3.99</strong>
+                        </div>
+                        <div class="flex justify-between mt-2 pt-2 border-t font-bold">
+                            <span>Total:</span>
+                            <strong>$19.46</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Order Status</label>
+                    <select class="form-control">
+                        <option>Pending</option>
+                        <option selected>Completed</option>
+                        <option>Cancelled</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" id="cancelOrder">Cancel</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

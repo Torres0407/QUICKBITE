@@ -1,0 +1,256 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // DOM Elements
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    const formTabs = document.querySelectorAll('.form-tabs li');
+    const togglePasswordIcons = document.querySelectorAll('.toggle-password');
+    const roleOptions = document.querySelectorAll('.role-option');
+    const sellerFields = document.getElementById('seller-fields');
+    const forgotPasswordLink = document.getElementById('forgot-password');
+    const forgotPasswordModal = document.getElementById('forgot-password-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const sendResetLink = document.getElementById('send-reset-link');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    // Tab switching
+    formTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            formTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Hide all forms
+            document.querySelectorAll('.form').forEach(form => {
+                form.classList.remove('active');
+            });
+            
+            // Show the corresponding form
+            const tabName = this.getAttribute('data-tab');
+            document.getElementById(`${tabName}-form`).classList.add('active');
+        });
+    });
+    
+    // Toggle password visibility
+    togglePasswordIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const input = this.previousElementSibling;
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+            
+            // Toggle eye icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    });
+    
+    // Role selection
+    roleOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            // Remove active class from all options
+            roleOptions.forEach(opt => opt.classList.remove('active'));
+            
+            // Add active class to clicked option
+            this.classList.add('active');
+            
+            // Show/hide seller fields
+            const role = this.getAttribute('data-role');
+            if (role === 'seller') {
+                sellerFields.classList.remove('hidden');
+            } else {
+                sellerFields.classList.add('hidden');
+            }
+        });
+    });
+    
+    // Forgot password modal
+    forgotPasswordLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        forgotPasswordModal.classList.add('active');
+    });
+    
+    closeModal.addEventListener('click', function() {
+        forgotPasswordModal.classList.remove('active');
+    });
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+        if (e.target === forgotPasswordModal) {
+            forgotPasswordModal.classList.remove('active');
+        }
+    });
+    
+    // Send reset link
+    sendResetLink.addEventListener('click', function() {
+        const email = document.getElementById('reset-email').value;
+        
+        if (!email) {
+            alert('Please enter your email address');
+            return;
+        }
+        
+        // Here you would typically send a reset link to the email
+        alert(`Password reset link has been sent to ${email}`);
+        forgotPasswordModal.classList.remove('active');
+    });
+    
+    // Form validation and submission
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        const rememberMe = document.getElementById('remember-me').checked;
+        
+        // Basic validation
+        if (!email || !password) {
+            alert('Please fill in all fields');
+            return;
+        }
+        
+        // Here you would typically validate with your backend
+        console.log('Login attempt:', { email, password, rememberMe });
+        
+        // Simulate successful login
+        simulateLogin();
+    });
+    
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const activeRole = document.querySelector('.role-option.active').getAttribute('data-role');
+        const name = document.getElementById('register-name').value;
+        const email = document.getElementById('register-email').value;
+        const phone = document.getElementById('register-phone').value;
+        const password = document.getElementById('register-password').value;
+        const confirmPassword = document.getElementById('register-confirm-password').value;
+        const agreeTerms = document.getElementById('agree-terms').checked;
+        
+        // Seller specific fields
+        let restaurantName = '';
+        let businessAddress = '';
+        let taxId = '';
+        
+        if (activeRole === 'seller') {
+            restaurantName = document.getElementById('restaurant-name').value;
+            businessAddress = document.getElementById('business-address').value;
+            taxId = document.getElementById('tax-id').value;
+        }
+        
+        // Validation
+        if (!name || !email || !phone || !password || !confirmPassword) {
+            alert('Please fill in all required fields');
+            return;
+        }
+        
+        if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+        
+        if (!agreeTerms) {
+            alert('You must agree to the terms and conditions');
+            return;
+        }
+        
+        if (activeRole === 'seller' && (!restaurantName || !businessAddress)) {
+            alert('Please fill in all seller information');
+            return;
+        }
+        
+        // Here you would typically send the data to your backend
+        const userData = {
+            role: activeRole,
+            name,
+            email,
+            phone,
+            password,
+            restaurantName,
+            businessAddress,
+            taxId
+        };
+        
+        console.log('Registration data:', userData);
+        
+        // Simulate successful registration
+        simulateRegistration();
+    });
+    
+    // Carousel functionality
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Set up dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+    
+    // Auto-advance slides every 5 seconds
+    setInterval(nextSlide, 5000);
+    
+    // Helper functions
+    function simulateLogin() {
+        // Show loading state
+        const loginBtn = loginForm.querySelector('.btn');
+        const originalText = loginBtn.textContent;
+        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+        loginBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+            // Reset button
+            loginBtn.textContent = originalText;
+            loginBtn.disabled = false;
+            
+            // Redirect to dashboard (in a real app)
+            alert('Login successful! Redirecting to dashboard...');
+            const activeRoleElem = document.querySelector('.role-option.active');
+            const activeRole = activeRoleElem ? activeRoleElem.getAttribute('data-role') : 'buyer';
+            window.location.href = activeRole === 'seller' ? 'seller-dashboard.html' : 'buyer-dashboard.html';
+        }, 1500);
+    }
+    
+    function simulateRegistration() {
+        // Show loading state
+        const registerBtn = registerForm.querySelector('.btn');
+        const originalText = registerBtn.textContent;
+        registerBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating account...';
+        registerBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+            // Reset button
+            registerBtn.textContent = originalText;
+            registerBtn.disabled = false;
+            
+            // Show success message and switch to login
+            alert('Account created successfully! Please login.');
+            document.querySelector('.form-tabs li[data-tab="login"]').click();
+            
+            // Clear form
+            registerForm.reset();
+            sellerFields.classList.add('hidden');
+            document.querySelector('.role-option[data-role="buyer"]').click();
+        }, 2000);
+    }
+    
+    // Initialize
+    showSlide(0);
+});

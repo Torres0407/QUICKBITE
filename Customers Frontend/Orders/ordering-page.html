@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Place - QuickBite</title>
+  <link rel="stylesheet" href="ordering-page.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">Quick<span
+      class="highlight">Bite</span></div>
+
+    <nav class="nav-links">
+      <ul>
+        <li><a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Homepage\homepage.html">Home</a></li>
+        <li><a href="C:/Users/USER/Documents/QuickBite/Customers Frontend/Restaurant-listing/restuarant-listing.html">Browse Menu</a></li>
+        <li><a href="C:/Users/USER/Documents/QuickBite/Customers Frontend/Restaurant-listing/restuarant-listing.html">Special Offers</a></li>
+        <li><a href="C:/Users/USER/Documents/QuickBite/Customers Frontend/Restaurant-listing/restuarant-listing.html">Restaurants</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </nav>
+   <div class="login-cart">
+  <span id="user-name">Login/Sign Up</span>
+  <span id="user-avatar" class="avatar"></span>
+</div>
+
+
+     <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <!-- Hero Background Image -->
+<div class="hero-image"></div>
+
+<div class="content">
+  <main class="main-container">
+    <div class="restaurant-info">
+      <img src="thePlaceLogo.png" alt="The Place Logo" class="restaurant-logo"/>
+      <div class="restaurant-details">
+        <h1 class="restaurant-name">The Place</h1>
+        <div class="offer-tag">🔥 Up to 30% Off Today!</div>
+        <div class="restaurant-stats">
+          <span>👍 96% Recommended</span>
+          <span>⏱ -</span>
+          <span>💸 ₦1,200.00</span>
+          <span class="prime-tag">🥇 Prime</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="order-summary sticky-summary">
+      <h2>Your Order</h2>
+     <div id="orderItems" class="order-items">
+  <!-- Cart items will appear here -->
+</div>
+<div class="order-total">
+  <hr />
+  <p><strong>Total:</strong> ₦<span id="orderTotal">0.00</span></p>
+  <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+</div>
+
+
+    </aside>
+  </main>
+
+  <section class="section-search">
+    <h3>Sections</h3>
+    <input type="text" placeholder="Search in The Place"/>
+  </section>
+
+ 
+  <section class="menu-section">
+  <aside class="category-list">
+    <h4><span class="category-icon">📚</span> Sections</h4>
+    <ul>
+    <li><a href="#promotions">Promotions</a></li>
+    <li><a href="#top-sellers">Top Sellers</a></li>
+    <li><a href="#value-munch">Value Munch Deals</a></li>
+    <li><a href="#small-value-munch">Small Value Munch Meals</a></li>
+    <li><a href="#jollof-rice">Jollof Rice</a></li>
+    <li><a href="#mains">Mains</a></li>
+    <li><a href="#protein">Protein</a></li>
+  </ul>
+  </aside>
+
+   <div class="scrollable-sections">
+  <div class="menu-items">
+    <div class="menu-heading" id="promotions">
+       <h2>🔥 Promotions</h2>
+    </div>
+
+    <div class="food-cards">
+    <div class="food-card">
+      <img src="jollofRiceandChicken.jpg" alt="Jollof Rice & Chicken">
+      <div class="food-details">
+      <div class="food-title">
+      <h4>Jollof Rice & Chicken</h4>
+      <span class="discount-badge">-30%</span>
+      </div>
+      <p class="desc">Classic Nigerian jollof rice served with a juicy grilled chicken leg. Packed with rich tomato flavor.</p>
+      <div class="food-price">
+          <span class="new-price">₦3,400.00</span>
+          <span class="old-price">₦4,750.00</span>
+        </div>
+     <button class="add-btn">+</button>
+    </div>
+    </div>
+
+  <div class="food-card">
+    <img src="fried rice bg.jpg" alt="Fried Rice & Beef Strips">
+    <div class="food-details">
+      <div class="food-title">
+        <h4>Fried Rice & Beef Strips</h4>
+        <span class="discount-badge">-30%</span>
+      </div>
+      <p class="desc">Fluffy fried rice paired with marinated beef strips in a savory stir-fry blend. A lunchtime favorite!</p>
+      <div class="food-price">
+        <span class="new-price">₦3,200</span>
+        <span class="old-price">₦4,500</span>
+      </div>
+      <button class="add-btn">+</button>
+    </div>
+  </div>
+  <div class="food-card">
+    <img src="spaghettiandmeatballs.jpg" alt="Spaghetti Special">
+    <div class="food-details">
+      <div class="food-title">
+        <h4>Spaghetti Special</h4>
+        <span class="discount-badge">-20%</span>
+      </div>
+      <p class="desc">Spaghetti tossed in pepper sauce with meatballs. Spicy and satisfying – ideal for evening cravings.</p>
+      <div class="food-price">
+        <span class="new-price">₦2,800</span>
+        <span class="old-price">₦3,500</span>
+      </div>
+      <button class="add-btn">+</button>
+    </div>
+  </div>
+</div>
+
+<div class="menu-heading"  id="top-sellers">
+  <h2>⭐ Top Sellers</h2>
+  </div>
+  <div class="food-cards">
+    <div class="food-card">
+      <img src="yamandeggsauce.jpg" alt="Yam & Egg Sauce">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Boiled Yam & Egg Sauce</h4>
+        </div>
+        <p class="desc">Thick slices of boiled yam served with our famous tomato & pepper egg sauce. Light and filling.</p>
+        <div class="food-price">
+          <span class="new-price">₦2,200</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="beansandplantain.jpg" alt="Beans & Plantain">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Beans & Fried Plantain</h4>
+        </div>
+        <p class="desc">Creamy porridge beans paired with golden, crispy plantains – a beloved classic!</p>
+        <div class="food-price">
+          <span class="new-price">₦2,500</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+
+    <div class="food-card">
+      <img src="chicken pepper soup.jpg" alt="Chicken Pepper Soup">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Chicken Pepper Soup</h4>
+        </div>
+        <p class="desc">Hot and spicy chicken broth with native herbs. Perfect for cold nights or quick recovery.</p>
+        <div class="food-price">
+          <span class="new-price">₦2,800</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-heading" id="value-munch">
+  <h2>💰 Value Munch Deals</h2>
+  </div>
+  <div class="food-cards">
+    <div class="food-card">
+      <img src="swallow with egusi soup.jpg" alt="Swallow & Egusi">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Swallow with Egusi Soup</h4>
+        </div>
+        <p class="desc">Choose your swallow (Eba, Semo, Amala) served with thick melon seed soup and meat chunks.</p>
+        <div class="food-price">
+          <span class="new-price">₦2,000</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="rice and stew.jpg" alt="White Rice & Stew">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>White Rice & Stew</h4>
+        </div>
+        <p class="desc">Steamed white rice drenched in spicy tomato stew, with your choice of meat or egg.</p>
+        <div class="food-price">
+          <span class="new-price">₦1,800</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="Craving Easy Noodles For Kids_ This Indomie….jpg" alt="Instant Noodles & Egg">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Instant Noodles & Fried Egg</h4>
+        </div>
+        <p class="desc">Quick and tasty noodles cooked with pepper and veggies, topped with a sunny-side-up egg.</p>
+        <div class="food-price">
+          <span class="new-price">₦1,500</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+  </div>
+
+<div class="menu-heading" id="small-value-munch">
+  <h2>🍱 Small Value Munch Meals</h2>
+  </div>
+  <div class="food-cards">
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?snack,meat-pie" alt="Meat Pie & Zobo">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Meat Pie & Zobo</h4>
+        </div>
+        <p class="desc">Freshly baked meat pie with a spicy beef filling served with chilled zobo drink.</p>
+        <div class="food-price">
+          <span class="new-price">₦1,200</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?egg-roll,juice" alt="Egg Roll & Juice">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Egg Roll & Juice</h4>
+        </div>
+        <p class="desc">Classic egg roll paired with natural fruit juice – simple and satisfying for a quick bite.</p>
+        <div class="food-price">
+          <span class="new-price">₦1,000</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?puff-puff,akara" alt="Puff-Puff & Akara Combo">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Puff-Puff & Akara Combo</h4>
+        </div>
+        <p class="desc">Crispy akara balls and soft puff-puff – a filling snack combo with local flair.</p>
+        <div class="food-price">
+          <span class="new-price">₦1,100</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="menu-heading"  id="jollof-rice">
+  <h2>🍚 Jollof Rice Options</h2>
+  </div>
+  <div class="food-cards">
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?jollof-rice,fish" alt="Jollof Rice & Grilled Fish">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Jollof Rice & Grilled Fish</h4>
+        </div>
+        <p class="desc">Smoky grilled fish served alongside spicy Nigerian jollof rice – crowd favorite!</p>
+        <div class="food-price">
+          <span class="new-price">₦3,200</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?jollof-rice,egg" alt="Jollof Rice & Fried Egg">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Jollof Rice & Fried Egg</h4>
+        </div>
+        <p class="desc">Budget-friendly jollof combo with a fried egg, perfect for students or light eaters.</p>
+        <div class="food-price">
+          <span class="new-price">₦2,000</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?jollof,plantain" alt="Jollof Rice & Plantain">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Jollof Rice & Plantain</h4>
+        </div>
+        <p class="desc">Sweet, ripe plantains pair beautifully with spicy tomato-based jollof rice.</p>
+        <div class="food-price">
+          <span class="new-price">₦2,500</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+  </div>
+
+   <div class="menu-heading" id="mains">
+  <h2>🍽️ Mains</h2>
+  </div>
+  <div class="food-cards">
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?pasta,chicken" alt="Creamy Alfredo Pasta">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Creamy Alfredo Pasta</h4>
+        </div>
+        <p class="desc">Fettuccine in creamy alfredo sauce topped with grilled chicken breast – rich & filling.</p>
+        <div class="food-price">
+          <span class="new-price">₦3,500</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?rice,curry" alt="Curry Rice">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Curry Rice & Veggies</h4>
+        </div>
+        <p class="desc">Fragrant curry rice mixed with stir-fried vegetables and light seasoning. Light and healthy.</p>
+        <div class="food-price">
+          <span class="new-price">₦2,900</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?plantain,yam" alt="Plantain & Yam Porridge">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Yam & Plantain Porridge</h4>
+        </div>
+        <p class="desc">Soft yam cubes and ripe plantains simmered in a peppery stew base. A hearty delight!</p>
+        <div class="food-price">
+          <span class="new-price">₦2,600</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+  </div>
+
+
+<div class="menu-heading" id="protein">
+  <h2>🍗 Protein</h2>
+  </div>
+  <div class="food-cards">
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?grilled-chicken" alt="Grilled Chicken Quarters">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Grilled Chicken Quarters</h4>
+        </div>
+        <p class="desc">Marinated chicken grilled to perfection, served juicy and smoky.</p>
+        <div class="food-price">
+          <span class="new-price">₦2,800</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?fried-fish" alt="Fried Fish">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Deep Fried Fish</h4>
+        </div>
+        <p class="desc">Crispy deep-fried whole fish seasoned with pepper and garlic – bold and spicy!</p>
+        <div class="food-price">
+          <span class="new-price">₦2,700</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="https://source.unsplash.com/250x150/?beef-stew" alt="Pepper Beef">
+      <div class="food-details">
+        <div class="food-title">
+          <h4>Pepper Beef Chunks</h4>
+        </div>
+        <p class="desc">Tender beef chunks sautéed in hot pepper sauce. Great for protein lovers!</p>
+        <div class="food-price">
+          <span class="new-price">₦2,600</span>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+    </div>
+  </section>
+  </div>
+
+<!-- Modern Add-to-Cart Modal -->
+<div id="addToCartModal" class="modal hidden">
+  <div class="modal-card">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Customize Your Order</h2>
+    <p class="item-name" id="selectedFoodName">Selected Item</p>
+
+    <div class="form-group">
+      <label for="quantity">Select Quantity</label>
+      <input type="number" id="quantity" min="1" value="1" />
+    </div>
+
+    <h3>Add a Drink</h3>
+    <div class="drink-options">
+      <div class="drink-card" onclick="selectDrink(this, 'Coke')">
+        <img src="drinks/coke.png" alt="Coke" />
+        <p>Coke</p>
+      </div>
+      <div class="drink-card" onclick="selectDrink(this, 'Pepsi')">
+        <img src="drinks/pepsi.png" alt="Pepsi" />
+        <p>Pepsi</p>
+      </div>
+      <div class="drink-card" onclick="selectDrink(this, 'Water')">
+        <img src="drinks/water.png" alt="Water" />
+        <p>Water</p>
+      </div>
+      <div class="drink-card" onclick="selectDrink(this, '')">
+        <img src="drinks/none.png" alt="No Drink" />
+        <p>No Drink</p>
+      </div>
+    </div>
+
+    <button class="confirm-btn" onclick="confirmAddToCart()">Add to Cart</button>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h2>Quick<span>Bite</span></h2>
+      <div class="store-badges">
+        <img src="...apple-store.png" alt="Apple Store">
+        <img src="google-play.png" alt="Google Play">
+      </div>
+      <p>Company QuickBite Food Ordering Services, Registered with the National Institute of Information Technology.</p>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Get Exclusive Deals in your Inbox</h4>
+      <form>
+        <input type="email" placeholder="youremail@gmail.com">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p>We won't spam, read our <a href="#">email policy</a></p>
+      <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-tiktok"></i>
+        <i class="fab fa-snapchat-ghost"></i>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Legal Pages</h4>
+        <a href="#">Terms and conditions</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+        <a href="#">Modern Slavery Statement</a>
+      </div>
+      <div>
+        <h4>Important Links</h4>
+        <a href="#">Get help</a>
+        <a href="#">Add your restaurant</a>
+        <a href="#">Sign up to deliver</a>
+        <a href="#">Create a business account</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Order.uk Copyright © 2024. All Rights Reserved.</p>
+    <div class="bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Pricing</a>
+      <a href="#">Do not sell or share my personal information</a>
+    </div>
+  </div>
+</footer>
+
+<script src="ordering-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBite - Food Ordering</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="homepage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">Quick<span class="highlight">Bite</span></div>
+    
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Restaurant-listing\restuarant-listing.html">Browse Menu</a></li>
+        <li><a href="C:\Users\USER\Documents\QuickBite\Customers Frontend\Restaurant-listing\restuarant-listing.html">Special Offers</a></li>
+        <li><a href="C:/Users/USER/Documents/QuickBite/Customers Frontend/Restaurant-listing/restuarant-listing.html">Restaurants</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </nav>
+    <div class="user-menu" id="user-menu" style="display: none;">
+  <button id="user-button">Hi, User ▼</button>
+  <div class="dropdown" id="user-dropdown">
+    <a href="C:\Users\USER\Documents\QuickBite\Admins Frontend\admin\CustomersProfilePages\users.html">Profile</a>
+    <a href="" id="logout-button">Logout</a>
+  </div>
+</div>
+
+<!-- Keep this for non-logged-in users -->
+<a id="login-signup-button" href="auth.html">Login/Sign Up</a>
+<!-- 
+    <div class="login-cart">
+       <button class="login-btn">Login/Signup</button> 
+       <button id="login-signup-button" class="login-signup-button" onclick="window.location.href='auth.html'">Login/Sign Up</button> -->
+
+
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-close">Order Restaurant food, takeaway and groceries.</p>
+      <h1>Feast Your Taste Buds, <span class="highlight">Fast and Fresh</span></h1>
+      <p>Search for your favourite meal here</p>
+      <form class="search-bar">
+        <input type="text" placeholder="e.g. E14 3TE">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Deals Section -->
+  <section class="deals">
+    <div class="deals-header">
+      <h2>Up to -40% 🎉 QuickBite exclusive deals</h2>
+      <div class="categories">
+        <button class="active">Pizza & Fast Food</button>
+        <button>Vegan</button>
+        <button>Sushi</button>
+        <button>Others</button>
+      </div>
+    </div>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide deal-card" style="background-image: url('Double hamburger.jpg');">
+          <div class="deal-info">
+            <p>Restaurant</p>
+            <p>Chef Burgers Nigeria</p>
+          </div>
+        </div>
+        <div class="swiper-slide deal-card" style="background-image: url('A pizza with a slice of pizza being melted on it _ Premium AI-generated image.jpg');">
+          <div class="deal-info">
+            <p>Restaurant</p>
+            <p>Pizzaria Nigeria</p>
+          </div>
+        </div>
+        <div class="swiper-slide deal-card" style="background-image: url('Chili\ oil\ noodles\ are\ a\ simple\ yet\ incredibly….jpg');">
+          <div class="deal-info">
+            <p>Restaurant</p>
+            <p>Chow Express</p>
+          </div>
+        </div>
+        <div class="swiper-slide deal-card" style="background-image: url('Crispy\ and\ Juicy\ Southern\ Fried\ Chicken\ with….jpg');">
+          <div class="deal-info">
+            <p>Restaurant</p>
+            <p>Fried Chicken Plaza</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="popular-categories">
+    <h2>QuickBite Popular Categories 🍔</h2>
+    <div class="swiper secondSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide category">
+        <img src="Pancakes.jpeg" alt="Pancakes">
+         <div class="category-info">
+    <h3>Breakfast</h3>
+    <p>15 Restaurants</p>
+  </div>
+    </div>
+     <div class="swiper-slide category">
+        <img src="salad2.jpeg" alt="salads">
+         <div class="category-info">
+    <h3>salads</h3>
+    <p>5 Restaurants</p>
+  </div>
+    </div>
+    <div class="swiper-slide category">
+        <img src="Rice.jpeg" alt="Rice">
+         <div class="category-info">
+    <h3>Rice dishes</h3>
+    <p>20 Restaurants</p>
+  </div>
+    </div>
+     <div class="swiper-slide category">
+        <img src="pasta.jpeg" alt="pasta">
+         <div class="category-info">
+    <h3>Pasta & casuals</h3>
+    <p>9 Restaurants</p>
+  </div>
+    </div>
+     <div class="swiper-slide category">
+        <img src="pizza.jpeg" alt="pizza">
+         <div class="category-info">
+    <h3>Pizza</h3>
+    <p>24 Restaurants</p>
+  </div>
+    </div>
+     <div class="swiper-slide category">
+        <img src="coffee.jpeg" alt="coffee">
+         <div class="category-info">
+    <h3>Cafe</h3>
+    <p>10 Restaurants</p>
+  </div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Restaurants -->
+  <section class="popular-restaurants">
+    <h2>Popular Restaurants</h2>
+    <div class="restaurant-flex">
+      <div class="restaurant-logos">
+      <img src="mc logo.jpeg">
+      <div class="restaurant-name">
+        <h3>Mc Donald's</h3>
+      </div>
+      </div>
+        <div class="restaurant-logos">
+      <img src="kfc logo.jpeg">
+      <div class="restaurant-name">
+        <h3>KFC</h3>
+      </div>
+      </div>  <div class="restaurant-logos">
+      <img src="Burger King Png Logo.jpeg">
+      <div class="restaurant-name">
+        <h3>Burger King</h3>
+      </div>
+      </div>  <div class="restaurant-logos">
+      <img src="Krusty Kreme.jpeg">
+      <div class="restaurant-name">
+        <h3>Krispy Kreme</h3>
+      </div>
+      </div>  <div class="restaurant-logos">
+      <img src="Domino's Pizza white.jpeg">
+      <div class="restaurant-name">
+        <h3>Domino's Pizza</h3>
+      </div>
+      </div>  <div class="restaurant-logos">
+      <img src="Pinkberry logo.jpeg">
+      <div class="restaurant-name">
+        <h3>Pinkberry</h3>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership -->
+  <section class="partnership">
+    <div class="partner-card" style="background-image: url('Chef\ PSD\,\ High\ Quality\ Free\ PSD\ Templates\ for\ Download\ _\ Freepik.jpg');">
+      <p>Sign up as a business</p>
+      <h3>Partner with us</h3>
+      <button>Get Started</button>
+    </div>
+    <div class="rider-card" style="background-image: url('Free\ Photo\ _\ Food\ delivery\ boy\ driving\ scooter\ with\ box\ with\ food\ and\ wearing\ mask.jpg');">
+      <p>Sign up as a rider</p>
+      <h3>Ride with us</h3>
+      <button>Get Started</button>
+    </div>
+  </section>
+
+
+  <section class="about-us">
+  <h2>Know more about us!</h2>
+  <div class="about-tabs">
+    <button class="tab active">Frequent Questions</button>
+    <button class="tab">Who we are?</button>
+    <button class="tab">Partner Program</button>
+    <button class="tab">Help & Support</button>
+  </div>
+
+  <div class="about-content" style="background: url('Restaurant\ mural\ wallpaper\ _\ Premium\ Vector.jpg');">
+    <div class="faq-left">
+      <button class="faq-btn active">How does QuickBite work?</button>
+      <p>What payment methods are accepted?</p>
+      <p class="active">Can I track my order in real-time?</p>
+      <p>Are there any special discounts or promotions?</p>
+      <p class="active">Is QuickBite available in my area?</p>
+    </div>
+
+    <div class="faq-steps">
+      <div class="step">
+        <img src="icons8-service-bell-64.png" alt="Place an Order">
+        <h4>Place an Order!</h4>
+        <p>Place order through our website or mobile app</p>
+      </div>
+      <div class="step">
+        <img src="icons8-track-order-48.png" alt="Track Progress">
+        <h4>Track Progress</h4>
+        <p>You can track your order status with delivery time</p>
+      </div>
+      <div class="step">
+        <img src="icons8-receipt-approved-64.png" alt="Get Your Order">
+        <h4>Get your Order!</h4>
+        <p>Receive your order at a lightning-fast speed!</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="description">
+    QuickBite simplifies the food ordering process. Browse through our diverse menu, select your favorite dishes, and proceed to checkout. Your delicious meal will be on its way to your doorstep in no time!
+  </p>
+</section>
+
+<section class="stats-section">
+  <div class="stat-box">
+    <h3>546+</h3>
+    <p>Registered Riders</p>
+  </div>
+  <div class="stat-box">
+    <h3>789,900+</h3>
+    <p>Orders Delivered</p>
+  </div>
+  <div class="stat-box">
+    <h3>690+</h3>
+    <p>Restaurants Partnered</p>
+  </div>
+  <div class="stat-box">
+    <h3>17,457+</h3>
+    <p>Food items</p>
+  </div>
+</section>
+
+
+  <footer class="main-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h2>Quick<span>Bite</span></h2>
+      <div class="store-badges">
+        <img src="...apple-store.png" alt="Apple Store">
+        <img src="google-play.png" alt="Google Play">
+      </div>
+      <p>Company QuickBite Food Ordering Services, Registered with the National Institute of Information Technology.</p>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Get Exclusive Deals in your Inbox</h4>
+      <form>
+        <input type="email" placeholder="youremail@gmail.com">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p>We won't spam, read our <a href="#">email policy</a></p>
+      <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-tiktok"></i>
+        <i class="fab fa-snapchat-ghost"></i>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Legal Pages</h4>
+        <a href="#">Terms and conditions</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+        <a href="#">Modern Slavery Statement</a>
+      </div>
+      <div>
+        <h4>Important Links</h4>
+        <a href="#">Get help</a>
+        <a href="#">Add your restaurant</a>
+        <a href="#">Sign up to deliver</a>
+        <a href="#">Create a business account</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Order.uk Copyright © 2024. All Rights Reserved.</p>
+    <div class="bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Pricing</a>
+      <a href="#">Do not sell or share my personal information</a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="homepage.js"></script> <!-- or homepage.js depending on your file -->
+
+  
+</body>
+</html>

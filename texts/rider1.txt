@@ -1,0 +1,834 @@
+:root {
+    --primary-color: #f15f11;
+    --secondary-color: #f15f11;
+    --dark-color: #333;
+    --light-color: #f8f9fa;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --gray-color: #6c757d;
+    --white-color: #ffffff;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.forms-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.form-control {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.form-tabs {
+    display: flex;
+    list-style: none;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-tabs li {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--gray-color);
+    position: relative;
+    transition: var(--transition);
+}
+
+.form-tabs li.active {
+    color: var(--primary-color);
+}
+
+.form-tabs li.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: var(--gray-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--gray-color);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.options input {
+    margin-right: 5px;
+}
+
+.options a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.social-login {
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 1rem;
+    color: var(--gray-color);
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: #ddd;
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--white-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icon.google {
+    background: #db4437;
+}
+
+.social-icon.facebook {
+    background: #4267b2;
+}
+
+.social-icon.apple {
+    background: #000;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.role-selection {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.role-option {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.role-option i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--gray-color);
+}
+
+.role-option.active {
+    border-color: var(--primary-color);
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.role-option.active i {
+    color: var(--primary-color);
+}
+
+.terms {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.terms a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+.carousel {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white-color);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 300px;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slide h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.slide p {
+    font-size: 1.2rem;
+    max-width: 80%;
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background: var(--white-color);
+    transform: scale(1.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-color);
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--dark-color);
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.modal-content p {
+    margin-bottom: 1.5rem;
+    color: var(--gray-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .forms-container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    
+    .carousel {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-tabs li {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .role-selection {
+        flex-direction: column;
+    }
+    
+    .input-group input {
+        padding: 10px 10px 10px 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+// Supabase Initialization
+const SUPABASE_URL = 'https://pwqcgvbnpewyzphoxpym.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3cWNndmJucGV3eXpwaG94cHltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk2MzM4NjAsImV4cCI6MjA2NTIwOTg2MH0.JZzL8_hK2cqoJTAE3qU0Srf2mporbGrVLlaHWxMjDtc';
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    const formTabs = document.querySelectorAll('.form-tabs li');
+    const togglePasswordIcons = document.querySelectorAll('.toggle-password');
+    const roleOptions = document.querySelectorAll('.role-option');
+    const sellerFields = document.getElementById('seller-fields');
+    const riderFields = document.getElementById('rider-fields');
+    const forgotPasswordLink = document.getElementById('forgot-password');
+    const forgotPasswordModal = document.getElementById('forgot-password-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const sendResetLink = document.getElementById('send-reset-link');
+
+    formTabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            formTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            document.querySelectorAll('.form').forEach(form => form.classList.remove('active'));
+            const tabName = this.getAttribute('data-tab');
+            document.getElementById(`${tabName}-form`).classList.add('active');
+        });
+    });
+
+    togglePasswordIcons.forEach(icon => {
+        icon.addEventListener('click', function () {
+            const input = this.previousElementSibling;
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    });
+
+    roleOptions.forEach(option => {
+        option.addEventListener('click', function () {
+            roleOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+            const role = this.getAttribute('data-role');
+            sellerFields.classList.toggle('hidden', role !== 'seller');
+            riderFields.classList.toggle('hidden', role !== 'rider');
+        });
+    });
+
+    forgotPasswordLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        forgotPasswordModal.classList.add('active');
+    });
+
+    closeModal.addEventListener('click', function () {
+        forgotPasswordModal.classList.remove('active');
+    });
+
+    window.addEventListener('click', function (e) {
+        if (e.target === forgotPasswordModal) {
+            forgotPasswordModal.classList.remove('active');
+        }
+    });
+
+    sendResetLink.addEventListener('click', async function () {
+        const email = document.getElementById('reset-email').value;
+        if (!email) return alert('Please enter your email address');
+        const { error } = await supabase.auth.resetPasswordForEmail(email);
+        if (error) return alert('Error sending reset link: ' + error.message);
+        alert(`Password reset link sent to ${email}`);
+        forgotPasswordModal.classList.remove('active');
+    });
+
+    loginForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        if (!email || !password) return alert('Please fill in all fields');
+
+        const loginBtn = loginForm.querySelector('.btn');
+        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+        loginBtn.disabled = true;
+
+        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+        loginBtn.innerHTML = 'Login';
+        loginBtn.disabled = false;
+
+        if (error) return alert('Login failed: ' + error.message);
+
+        const userRole = data?.user?.user_metadata?.role || 'buyer';
+        alert('Login successful!');
+        window.location.href = `${userRole}-dashboard.html`;
+    });
+
+    registerForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const activeRole = document.querySelector('.role-option.active').getAttribute('data-role');
+        const name = document.getElementById('register-name').value;
+        const email = document.getElementById('register-email').value;
+        const phone = document.getElementById('register-phone').value;
+        const password = document.getElementById('register-password').value;
+        const confirmPassword = document.getElementById('register-confirm-password').value;
+        const agreeTerms = document.getElementById('agree-terms').checked;
+
+        if (!name || !email || !phone || !password || !confirmPassword) {
+            return alert('Please fill in all required fields');
+        }
+
+        if (password !== confirmPassword) {
+            return alert('Passwords do not match');
+        }
+
+        if (!agreeTerms) {
+            return alert('You must agree to the terms and conditions');
+        }
+
+        let metadata = { role: activeRole, name, phone };
+
+        if (activeRole === 'seller') {
+            const restaurantName = document.getElementById('restaurant-name').value;
+            const businessAddress = document.getElementById('business-address').value;
+            const taxId = document.getElementById('tax-id').value;
+            if (!restaurantName || !businessAddress) {
+                return alert('Please fill in all seller information');
+            }
+            metadata = { ...metadata, restaurantName, businessAddress, taxId };
+        }
+
+        if (activeRole === 'rider') {
+            const driverId = document.getElementById('driver-id').value;
+            if (!driverId) return alert('Please enter driver ID');
+            metadata = { ...metadata, driverId };
+        }
+
+        const registerBtn = registerForm.querySelector('.btn');
+        registerBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating account...';
+        registerBtn.disabled = true;
+
+        const { error } = await supabase.auth.signUp({
+            email,
+            password,
+            options: { data: metadata }
+        });
+
+        registerBtn.innerHTML = 'Register';
+        registerBtn.disabled = false;
+
+        if (error) return alert('Registration failed: ' + error.message);
+
+        alert('Account created successfully! Please check your email to verify.');
+        document.querySelector('.form-tabs li[data-tab="login"]').click();
+        registerForm.reset();
+        sellerFields.classList.add('hidden');
+        riderFields.classList.add('hidden');
+        document.querySelector('.role-option[data-role="buyer"]').click();
+    });
+});
+
+// ----- Carousel Logic -----
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Start auto-slide
+setInterval(nextSlide, 5000);
+
+
+
+
+----------------------------------------------------------------
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Bite - Food Ordering Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="logo">
+                <img src="Logo 001.png" alt="Quick Bite Logo">
+                <h1>Quick <span>Bite</span></h1>
+            </div>
+            
+            <div class="form-control">
+                <ul class="form-tabs">
+                    <li class="active" data-tab="login">Login</li>
+                    <li data-tab="register">Register</li>
+                </ul>
+                
+                
+                <form id="login-form" class="form active">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="login-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" id="remember-me"> Remember me
+                        </label>
+                        <a href="#" id="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="social-login">
+                        <p>Or login with</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+                            <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon apple"><i class="fab fa-apple"></i></a>
+                        </div>
+                    </div>
+                </form>
+                
+               
+                <form id="register-form" class="form">
+                    <div class="role-selection">
+                        <div class="role-option active" data-role="buyer">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>I'm a Buyer</span>
+                        </div>
+                        <div class="role-option" data-role="seller">
+                            <i class="fas fa-store"></i>
+                            <span>I'm a Seller</span>
+                        </div>
+                        <div class="role-option" data-role="rider">
+                            <i class="fas fa-motorcycle"></i>
+                            <span>I'm a Rider</span>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="register-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="register-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="register-phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="register-password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    
+                    
+                    <div id="seller-fields" class="hidden">
+                        <div class="input-group">
+                            <i class="fas fa-store"></i>
+                            <input type="text" id="restaurant-name" placeholder="Restaurant/Business Name">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="business-address" placeholder="Business Address">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="tax-id" placeholder="Tax ID (Optional)">
+                        </div>
+                    </div>
+
+                    <div id="rider-fields" class="hidden">
+                        <div class="input-group">
+                            <i class="fas fa-motorcycle"></i>
+                            <input type="text" id="restaurant-name" placeholder="Restaurant/Business Name">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="business-address" placeholder="Business Address">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="file" id="driver-id" accept="image/*" placeholder="Driver ID (Upload)">
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" id="agree-terms" required>
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn">Create Account</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="carousel">
+            <div class="slide active">
+                <img src="Quick bite 002.avif" alt="Food Delivery" >
+                <h2>Order from your favorite restaurants</h2>
+                <p>Discover delicious meals from local eateries near you</p>
+            </div>
+            <div class="slide">
+                <img src="Quick bite 004.jpg" alt="Restaurant Owner">
+                <h2>Grow your food business</h2>
+                <p>Reach more customers with our platform</p>
+            </div>
+            <div class="slide">
+                <img src="Quick bite 003.jpg" alt="Fast Delivery">
+                <h2>Lightning fast delivery</h2>
+                <p>Get your food delivered in minutes</p>
+            </div>
+            <div class="carousel-nav">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="modal" id="forgot-password-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Reset Password</h2>
+            <p>Enter your email address to receive a password reset link</p>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="reset-email" placeholder="Your email address">
+            </div>
+            <button id="send-reset-link" class="btn">Send Reset Link</button>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
+
+

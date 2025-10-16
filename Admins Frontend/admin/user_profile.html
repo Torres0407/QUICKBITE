@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Profile | Quick Bite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="user_profile.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2 class="logo"><i class="fas fa-utensils"></i>Quick <span>Bite</span></h2>
+            <nav>
+                <ul>
+                    <li class="active"><i class="fas fa-tachometer-alt"></i><a href="">Dashboard</a></li>
+                    <li><i class="fas fa-bars"></i><a href="">Menu</a></li>
+                    <li><i class="fas fa-hamburger"></i><a href="">Food Order</a>/li>
+                    <li><i class="fas fa-star"></i><a href="">Reviews</a></li>
+                    <li><i class="fas fa-cog"></i><a href="">Setting</a></li>
+                </ul>
+            </nav>
+            <div class="upgrade-box">
+                <p>Upgrade your account to get more benefits</p>
+                <button class="upgrade-btn">Upgrade Now</button>
+            </div>
+        </aside>
+        <main class="main">
+            <header class="header">
+                <h1 class="user-name" id="user-name"></h1>
+                <div class="user-profile">
+                    <div class="user-avatar" id="userAvatar"></div>
+                    
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <ul>
+                            <li><i class="fas fa-user"></i>View Profile</li>
+                            <li><i class="fas fa-edit"></i>Edit Profile</li>
+                            <li><i class="fas fa-cog"></i>Settings</li>
+                            <li><i class="fas fa-sign-out-alt"></i>Logout</li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            
+            <section class="profile">
+                <div class="profile-card">
+                    <img src="Burger.webp" alt="profile" class="profile-image">
+                    <div class="profile-info">
+                    <div class="user-name" id="user-name"></div>
+                        <p><i class="fas fa-star" style="color: var(--warning);"></i> 5.0 · 1k+ Reviews<br>Joined June 2020</p>
+                        <button class="edit-btn"><i class="fas fa-pen"></i>Edit Profile</button>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-box green">
+                        <h4>932</h4>
+                        <p>Finished Orders</p>
+                    </div>
+                    <div class="stat-box yellow">
+                        <h4>1,032</h4>
+                        <p>Orders Delivered</p>
+                    </div>
+                    <div class="stat-box red">
+                        <h4>102</h4>
+                        <p>Orders Canceled</p>
+                    </div>
+                </div>
+                
+                <div class="earnings">
+                    <div class="earning-box">
+                        <p>Today's Earnings</p>
+                        <h3>$11,240</h3>
+                    </div>
+                    <div class="earning-box">
+                        <p>Target Earnings</p>
+                        <h3>$15,000</h3>
+                    </div>
+                </div>
+                
+                <div class="trip-info">
+                    <p><span>15</span>Total Trips</p>
+                    <p><span>15 Km</span>Total Distance</p>
+                    <p><span>90 Min</span>Total Time</p>
+                </div>
+                
+                <div class="points-box">
+                    <p>My Points</p>
+                    <h3>3,456</h3>
+                    <button class="reward-btn"><i class="fas fa-gift"></i>See Rewards</button>
+                </div>
+            </section>
+            
+            <section class="performance">
+                <div class="perf-metrics">
+                    <div class="metric">
+                        <p>Performance</p>
+                        <h4>50%</h4>
+                    </div>
+                    <div class="metric">
+                        <p>Min. Performance</p>
+                        <h4>80%</h4>
+                    </div>
+                    <div class="metric">
+                        <p>Avg. Performance</p>
+                        <h4>75%</h4>
+                    </div>
+                </div>
+                
+                <div class="perf-graph">
+                    <div class="graph-header">
+                        <h4>Performance Statistics</h4>
+                        <select class="time-select" id="timeSelect">
+                            <option>This Month</option>
+                            <option>This Week</option>
+                            <option>This Year</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="user_profile.js"></script>
+</body>
+</html>
